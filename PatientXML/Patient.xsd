@@ -7,7 +7,7 @@
 	<complexType name="Patient">
 		<sequence>
 			<element name="id" type="int"/>
-			<element name="name" type="string"/>
+			<element name="name" type="tns:String15Chars"/>
 			<element name="age" type="int"/>
 			<element name="dob" type="date"/>
 			<element name="email" type="string"/>
@@ -15,5 +15,25 @@
 			<element name="phone" type="string"/>
 		</sequence>
 	</complexType>
+	
+	<simpleType name="ID">
+		<restriction base="int">
+			<pattern value="[0-9]"></pattern>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="String15Chars">
+		<restriction base="string">
+			<maxLength value="15"></maxLength>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="Gender">
+		<restriction base="string">
+			<enumeration value="M"/>
+			<enumeration value="F"/>
+			<enumeration value="T"/>
+		</restriction>
+	</simpleType>
 	
 </schema>
