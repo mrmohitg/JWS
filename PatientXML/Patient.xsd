@@ -13,7 +13,22 @@
 			<element name="email" type="string"/>
 			<element name="gender" type="string"/>
 			<element name="phone" type="string"/>
+			<element name="payment" type="tns:PaymentType"></element>
 		</sequence>
+	</complexType>
+	
+	<complexType name="PaymentType">
+		<choice>
+			<element name="cash" type="int"></element>
+			<element name="insurance" type="tns:Insurance"></element>
+		</choice>
+	</complexType>
+	
+	<complexType name="Insurance">
+		<all>
+			<element name="provider" type="string"></element>
+			<element name="limit" type="int"></element> 
+		</all>
 	</complexType>
 	
 	<simpleType name="ID">
