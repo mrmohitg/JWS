@@ -11,7 +11,7 @@
 			<element name="age" type="int"/>
 			<element name="dob" type="date"/>
 			<element name="email" type="string"/>
-			<element name="gender" type="string"/>
+			<element name="gender" type="tns:Gender"/>
 			<element name="phone" type="string"/>
 			<element name="payment" type="tns:PaymentType"></element>
 		</sequence>
@@ -33,7 +33,7 @@
 	
 	<simpleType name="ID">
 		<restriction base="int">
-			<pattern value="[0-9]"></pattern>
+			<pattern value="[0-9]*"></pattern>
 		</restriction>
 	</simpleType>
 	
