@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.cxf.feature.Features;
+
 import com.mohit.ws.trainings.CreateOrdersRequest;
 import com.mohit.ws.trainings.CreateOrdersResponse;
 import com.mohit.ws.trainings.CustomerOrdersPortType;
@@ -14,6 +16,7 @@ import com.mohit.ws.trainings.GetOrdersResponse;
 import com.mohit.ws.trainings.Order;
 import com.mohit.ws.trainings.Product;
 
+@Features(features = "org.apache.cxf.feature.LoggingFeature")
 public class CustomerOrdersWsImpl implements CustomerOrdersPortType{
 	
 	Map<BigInteger,List<Order>> customerOrders = new HashMap<>();
